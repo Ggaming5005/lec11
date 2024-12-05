@@ -1,0 +1,94 @@
+/* Global Header Styling */
+.global-header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95); /* Slightly transparent background */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 10px 20px;
+  backdrop-filter: blur(10px); /* Subtle blur for a frosted-glass effect */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Thin border for separation */
+  width: 100%;
+}
+
+/* Navigation Bar */
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase; /* Consistent case */
+  letter-spacing: 0.5px;
+}
+
+/* Navigation Links */
+.nav-link {
+  text-decoration: none;
+  font-size: 16px;
+  color: #333;
+  position: relative;
+  padding: 5px 10px;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0056b3; /* Darker blue for hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Hover Effect - Underline */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -3px; /* Adjusted position for better alignment */
+  width: 0;
+  height: 2px;
+  background: #0056b3;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Active Link Styling */
+.active-link {
+  color: #0056b3;
+  font-weight: bold;
+}
+
+.active-link::after {
+  width: 100%;
+  height: 3px; /* Thicker underline for active link */
+  background: #003d80; /* Even darker shade for active underline */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+  }
+
+  .nav-link {
+    font-size: 14px; /* Slightly smaller font size for smaller screens */
+  }
+}
+
+/* Accessibility and Interactivity */
+.nav-link:focus {
+  outline: none;
+  color: #007bff;
+  border-bottom: 2px solid #007bff; /* Focus indicator for accessibility */
+}
+
+.global-header:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
